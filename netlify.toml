@@ -1,0 +1,15 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+  # İsteğe bağlı, ama genelde işe yarar
+  # Netlify tarafında Node 18 kullanılması için
+  # (Proje Node 18+ ile uyumlu olduğundan bunu seçiyorum.)
+[build.environment]
+  NODE_VERSION = "18"
+
+# React Router (SPA) için tüm istekleri index.html'e yönlendir
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
